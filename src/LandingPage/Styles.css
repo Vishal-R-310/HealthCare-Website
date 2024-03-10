@@ -1,23 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.Home-page {
+    background-color:#F9F0EC;
+    height: 93.5vh;
+    margin-top: -10px;
+    display: grid;
+    grid-template-rows:1fr 1fr;
+    grid-template-columns:1fr 1fr;
+}
+
+.home-items-head {
+    grid-area: 1/1/2/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-items-head h3 {
+    font-size: 70px;
+    width:70%;
+    background: linear-gradient(to right, #BC5E42, rgb(255, 210, 210)) ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fade 1s ease-in 1s forwards;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.home-items-info {
+    grid-area: 2/1/2/2;
+    display: flex;
+    justify-content: center;
+}
+
+.home-items-info p {
+    font-size: 30px;
+    width: 70%;
+    margin-top: -30px;
+}
+
+.home-items-doc {
+    grid-area: 1/2/3/3;
+    height: 750px;
+    margin: 180px 0px 0px 140px;
+    filter: drop-shadow(10px 10px 50px #fcb394);
+}
 .navbar {
-    background-color: #b1aaaa;
+    background-color:#ffe8df;
     overflow: hidden;
-    margin:-10px;
     height:70px;
+    box-shadow: 10px 10px 150px 5px rgba(52, 152, 219, 0.5);
   }
   
   .brand {
     float: left;
     padding: 18px 20px;
-    color: #f1ebeb;
-    font-size: 28px;
+    color: #3D3435;
+    font-size: 30px;
     text-decoration: none;
-    margin-left: 50px;
+    margin:-5px 0px 0px 50px;
     font-weight: 600;
   }
   
   .navbar-link {
     float: right;
-    margin: 0;
+    margin:-7px 0 0 0;
     padding: 0;
     list-style: none;
     padding: 8px;
@@ -30,18 +91,62 @@
   .nav-link {
     display: inline-block;
     padding: 15px 20px;
-    color: #0a0808;
     text-decoration: none;
     font-size: 22px;
     font-weight: 600;
     margin: 0 10px;
   }
 
+  .nav-link {
+    font-size: 18px;
+    color: #3D3435;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-transition-duration: 400ms;
+            transition-duration: 400ms;
+    -webkit-transition-property: color;
+    transition-property: color;
+  }
   
+  .nav-link:focus,
+  .nav-link:hover {
+    color: #3D3435;
+  }
+  
+  .nav-link:focus:after,
+  .nav-link:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .nav-link:after {
+    content: "";
+    pointer-events: none;
+    bottom: 1px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #3D3435;
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-transition-duration: 400ms;
+            transition-duration: 400ms;
+    -webkit-transition-property: width, left;
+    transition-property: width, left;
+  }
+
   .getstart-btn {
     margin:0px 40px 0px 30px;
-    background: rgb(15, 107, 43);
-    color: white;
+    background: #BC5E42;
+    color: #F9F0EC;
     border: none;
     border-radius: 10px;
     font-size: 20px;
@@ -52,18 +157,19 @@
     overflow: hidden;
     text-decoration: none;
     padding:8px 15px;
-    font-weight: 500;
+    font-weight: 600;
    }
    
    .getstart-btn:hover {
-    color: rgb(15, 107, 43);
-    background-color: #fff;
+    color: #BC5E42;
+    background-color: #B7BDC4;
     transition: 0.5s;
+    font-weight: 600;
    }
    
    .getstart-btn:after {
     content: "";
-    background: white;
+    background: #B7BDC4;
     position: absolute;
     z-index: -1;
     left: -10%;
@@ -91,7 +197,7 @@
 .registration-inner {
     background-color: #b1aaaa;
     background-color: #fff;
-    border: 2px solid #00F0FF90; 
+    border: 5px solid #00F0FF90; 
     border-radius: 50px;
     padding:50px; 
     width:35%;
@@ -105,6 +211,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(../Assets/hospitalbg.jpg);
+    background-size: cover; 
+    background-position: center;
 }
 
 .generate-btn,
@@ -241,12 +350,15 @@ p a {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(../Assets/hospitalbg.jpg);
+    background-size: cover; 
+    background-position: center;
 }
 
 .login-inner {
     background-color: #b1aaaa;
     background-color: #fff;
-    border: 2px solid #00F0FF90; 
+    border: 5px solid #00F0FF90; 
     border-radius: 50px;
     padding: 50px; 
     width: 35%;
@@ -277,6 +389,9 @@ p a {
 .forgot-reset-password-page {
     display: flex;
     height: 100vh;
+    background-image: url(../Assets/hospitalbg.jpg);
+    background-size: cover; 
+    background-position: center;
 }
 
 .forgot-reset-password-inner {
@@ -287,6 +402,7 @@ p a {
     box-shadow: 0 0 15px 5px rgba(52, 152, 219, 0.5);
     border-radius: 15px;
     height:30%;
+    background-color: white;
 }
 
 .continue-btn, .verify-btn {
