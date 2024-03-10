@@ -32,7 +32,7 @@ const PatientSignup = () => {
         <div className="register-page">
             <div className="registration-form">
                 <div className="registration-inner">
-                <h1 style={{textAlign:"center"}}>Sign Up</h1>
+                <h1 style={{textAlign:"center", marginBottom:"35px"}}>Sign Up</h1>
                 {formData.step === 1 && (
                     <>
                         <div className="input-group">
@@ -48,7 +48,7 @@ const PatientSignup = () => {
                             <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email"/>
                         </div>
                         <button className="generate-btn" onClick={handleGenerateClick}>Generate</button>
-                        <p style={{padding:"15px 15% 0px 20%", fontWeight:"bold"}}>Already have an account? <Link to="/patient-login">Login</Link></p>
+                        <p style={{padding:"15px 15% 0px 20%", fontWeight:"500"}}>Already have an account? <Link to="/patient-login">Login</Link></p>
                     </>
                 )}
                 {formData.step === 2 && (
@@ -63,7 +63,7 @@ const PatientSignup = () => {
                             <input type="password" name="confirmPassword" placeholder="Confirm Password"/>
                         </div>
                         <button className="proceed-btn" onClick={handleProceedClick}>Proceed</button>
-                        <p style={{padding:"15px 15% 0px 20%", fontWeight:"bold"}}>Already have an account? <Link to="/patient-login">Login</Link></p>
+                        <p style={{padding:"15px 15% 0px 20%", fontWeight:"500"}}>Already have an account? <Link to="/patient-login">Login</Link></p>
                     </>
                 )}
                 </div>
