@@ -213,7 +213,7 @@
     justify-content: center;
     background-image: url(../Assets/hospitalbg.jpg);
     background-size: cover; 
-    background-position: center;
+    background-position: left center;
 }
 
 .generate-btn,
@@ -352,7 +352,7 @@ p a {
     justify-content: center;
     background-image: url(../Assets/hospitalbg.jpg);
     background-size: cover; 
-    background-position: center;
+    background-position: left center;
 }
 
 .login-inner {
@@ -431,16 +431,79 @@ h2 {
     border: none;
     padding: 1rem;
     border-radius: 1rem;
-    background: #e8e8e8;
-    box-shadow: 5px 5px 10px #c5c5c5,
-           -5px -5px 10px #d1d1d1;
+    background: #f1f1f1;
+    box-shadow: 2px 2px 10px #c5c5c5,
+           -2px -2px 10px #d1d1d1;
     transition: 0.3s;
    }
    
    .input-group input:focus {
     outline-color: #e8e8e8;
-    background: #e8e8e8;
-    box-shadow: inset 20px 20px 60px #c5c5c5,
-           inset -20px -20px 60px #ffffff;
+    background: #fcfafa;
+    box-shadow: inset 20px 20px 60px #ececec,
+           inset -20px -20px 60px #e2e2e2;
     transition: 0.3s;
    }
+
+   .patient-btn {
+    position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    display: inline-block;
+    border-radius: 6em;
+    transition: all .2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 600;
+    color: black;
+    background-color: rgb(211, 211, 211);
+   }
+   
+   .patient-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   }
+   
+   .patient-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+   }
+   
+   .patient-btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+   }
+   
+   .patient-btn::after {
+    background-color: #d1d1d1;
+   }
+   
+   .patient-btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+   }
+
+.patient-button {
+    width: 40%;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.patient-login-btn {
+    text-decoration: none;
+    color: white;
+}

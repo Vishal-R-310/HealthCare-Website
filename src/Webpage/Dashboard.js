@@ -29,28 +29,28 @@ const DashBoard = () => {
                 </div>
                 <div className="user-profile">
                     <div className="user-profile-inner">
-                        <img src="" alt="User_Photo" />
-                        <p className="user-name">User</p>
+                        <img src={logo} alt="User_Photo" />
+                        <p className="user-name">User Name</p>
                         <p className="user-age">Age</p>
                         <div className="user-med-info">
-                            <div className="user-med-data-type-container">
+                            <div className="user-med-data-blood">
                                 <p className="user-med-data-type">Blood{}</p>
                                 <p className="user-med-data-val">A+{}</p>
                             </div>
                         </div>
                         <div className="user-med-info">
-                            <div className="user-med-data-type-container">
+                            <div className="user-med-data-weight">
                                 <p className="user-med-data-type">Weight{}</p>
                                 <p className="user-med-data-val">52Kg{}</p>
                             </div>
                         </div>
                         <div className="user-med-info">
-                            <div className="user-med-data-type-container">
+                            <div className="user-med-data-height">
                                 <p className="user-med-data-type">Height{}</p>
                                 <p className="user-med-data-val">160cm{}</p>
                             </div>
                         </div>
-                        <div className="user-allergy">Drug Allergy: {}</div>
+                        <div className="user-allergy"><p>Drug Allergy: <span>Penicilin</span></p></div>
                     </div>
                 </div>
                 <div className="user-remainder">
