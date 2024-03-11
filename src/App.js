@@ -1,5 +1,5 @@
 import React from "react";
-import DashBoard from "./Webpage/Dashboard";
+import DashBoardMenu from "./Webpage/DashboardContent";
 import LandingPage from "./LandingPage/LandingPage";
 import { Routes, Route } from "react-router-dom";
 import PatientLogin from "./LandingPage/Patient-Login";
@@ -16,7 +16,7 @@ function App() {
         <Route path="/patient-signup" element={<PatientSignup/>}/>
         <Route path="/patient-login" element={<PatientLogin/>} />
         <Route path="/forgot-password" element={<ForgotResetPassword/>} />
-        <Route path="/patient-login/patient-dash" element={<DashBoard/>} />
+        <Route path="/patient-login/patient-dash" element={<DashBoardMenu/>} />
         <Route path="/doctor-login" element={<DoctorLogin/>} />
         <Route path="/doctor-signup" element={<DoctorSignup/>} />
       </Routes>

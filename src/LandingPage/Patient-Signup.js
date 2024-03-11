@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import "./Patient-Login";
 
 const PatientSignup = () => {
+
     const [formData, setFormData] = useState({
         name: "",
         dob: "",
         mobile: "",
         email: "",
+        uniqueId: "", 
+        password: "",
         step: 1
     });
 
@@ -19,14 +22,34 @@ const PatientSignup = () => {
 
     const handleGenerateClick = () => {
         // Here you can add your logic for generating the unique id and password
-        setFormData({ ...formData, step: 2 });
+        const uniqueId = formData.name.replace(/\s+/g, '') + formData.dob.replace(/-/g, '');
+        setFormData({ ...formData, uniqueId, step: 2 });
     };
 
-    const handleProceedClick = () => {
-        // Here you can add your logic for proceeding to the next step
-        // For example, sending the registration data to the server
-        // and then redirecting to the login page
-    };
+    const handleProceedClick = async () => {
+        try {
+                console.log(formData.name);
+                const response = await fetch('http://localhost:3000/api/patient/patient-login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+    
+            const data = await response.json();
+            console.log('Registration successful:', data);
+
+
+        } catch (error) {
+            console.error('Error during registration:', error);
+            // Handle error, show error message to user, etc.
+        }
+    };    
 
     return (
         <div className="register-page">
