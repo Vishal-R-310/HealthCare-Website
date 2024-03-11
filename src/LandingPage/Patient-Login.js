@@ -37,7 +37,7 @@ const PatientLogin = () => {
                         <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" />
                     <p style={{textAlign:"right", fontWeight:"600"}}><Link to="/forgot-password">Forgot password?</Link></p>
                     </div>
-                    <button style={{margin:"0px 40% 0px 40%", borderRadius:"15px"}}className="login-btn" onClick={handleLoginClick}>Login</button>
+                    <button style={{margin:"0px 40% 0px 40%", borderRadius:"15px"}}className="login-btn" onClick={handleLoginClick}><Link to="./patient-dash" className="patient-login-btn"> Login</Link></button>
                     <p style={{padding:"5px 15% 0px 20%", fontWeight:"500"}}>Don't have an account? <Link to="/patient-signup">Register</Link></p>
                 </div>
             </div>
